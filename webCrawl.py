@@ -8,7 +8,7 @@
 # import requests       use for requests.get(url)
 from bs4 import BeautifulSoup
 from urllib import request
-import os, errno
+import os
 
 def web_crawler(max_pages):
     page = 1
@@ -16,9 +16,8 @@ def web_crawler(max_pages):
         batch = 'Batch'+str(2014+page)
         try:
             os.makedirs(batch)
-        except OSError as e:
-            if e.errno != errno.EEXIST:
-                raise
+        except FileExistsError:
+            print("I already Exist")
 
 
 
