@@ -25,7 +25,7 @@ def web_crawler(max_pages):
 
         url = 'http://doko.dwit.edu.np/class/show/' + str(page)
         #all_text = requests.get(url)
-        #useful_text = all_text.text        #use in old version, the html.parser below does everything now
+        #useful_text = all_text.text        #no need for .text incase of urlopen
 
         useful_text = request.urlopen(url)
         soup = BeautifulSoup(useful_text,'html.parser')
